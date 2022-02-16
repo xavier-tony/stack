@@ -1,0 +1,13 @@
+{
+  "userTypes": [
+    {
+      "type": "admin"
+    },
+    {
+      "type": "parent"
+    },
+    {
+      "type": "student"
+    }
+  ]
+}
