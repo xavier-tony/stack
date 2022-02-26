@@ -18,12 +18,16 @@ export class MockDB extends Dexie {
   constructor() {
     super('thestackdb');
     this.version(1).stores(schema);
-    this.on('populate', () => this.populate());
+    this.on('populate', async () => {
+      await this.populate();
+      console.log('populated', await this.userTypes.count());
+    });
   }
 
   populate(): any {
+    console.log('populating');
     if (!data) throw Error('No data to populate!');
-    this.userTypes.bulkAdd(this.data.userTypes);
+    return this.userTypes.bulkAdd(this.data.userTypes);
   }
 }
 

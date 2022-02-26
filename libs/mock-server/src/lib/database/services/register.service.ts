@@ -11,12 +11,16 @@ export class RegisterService {
   async register(req: IRegisterRequest) {
     if (!req || !req.firstname || !req.lastname || !req.username || !req.email)
       throw Error('Invalid Request!');
-
+    console.table(await mockDb.userTypes.toArray());
     const userId = await this.addUser(req);
-    return this.addParent(req, userId);
+    console.table(await mockDb.users.toArray());
+    const parentId = await this.addParent(req, userId);
+    const x = await mockDb.parents.toArray();
+    console.table(x);
+    return;
   }
 
-  private addUser(req: IRegisterRequest) {
+  async addUser(req: IRegisterRequest) {
     const user: TUser = {
       username: req.username,
       blocked: false,
@@ -25,11 +29,13 @@ export class RegisterService {
       updateOn: new Date(),
       updatedBy: req.updatedBy || 1,
     };
-
-    return mockDb.users.add(user);
+    console.log('add user', user);
+    const id = await mockDb.users.add(user);
+    return id;
   }
 
-  private addParent(req: IRegisterRequest, userId: number) {
+  async addParent(req: IRegisterRequest, userId: number) {
+    console.log('add parent');
     const parent: TParent = {
       dob: req.dob,
       email: req.email,
@@ -45,7 +51,8 @@ export class RegisterService {
       updatedBy: userId,
     };
 
-    return mockDb.parents.add(parent);
+    const id = await mockDb.parents.add(parent);
+    return id;
   }
 
   async login(username: string) {
