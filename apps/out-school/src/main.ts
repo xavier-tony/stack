@@ -4,7 +4,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { worker } from '@stack/mock-server';
+import { setupWorker } from 'msw';
+import { handlers } from '@stack/mock-server';
+
+export const worker = setupWorker(...handlers);
 
 if (environment.production) {
   enableProdMode();

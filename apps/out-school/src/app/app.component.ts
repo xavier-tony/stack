@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'stack-root',
@@ -8,11 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'out-school';
+  loginSubscription!: Subscription;
 
   constructor(private http: HttpClient) {}
 
-  login() {
-    this.http
+  login(callback?: Function) {
+    console.log('login');
+    this.loginSubscription = this.http
       .post('api/register', {
         username: 'shawnz',
         firstname: 'Shawn',
@@ -23,6 +26,11 @@ export class AppComponent {
         userTypeId: 1,
         dob: new Date(),
       })
-      .subscribe();
+      .subscribe((res) => {
+        console.log('response', res);
+        callback && callback();
+      });
   }
+
+  register() {}
 }

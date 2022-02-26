@@ -1,7 +1,8 @@
 module.exports = {
   displayName: 'out-school',
   preset: '../../jest.preset.js',
-  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  // fake-indexeddb/auto to fake the indexed db which will only work in the context of browser.
+  setupFilesAfterEnv: ['fake-indexeddb/auto', '<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',

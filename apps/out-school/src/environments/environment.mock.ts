@@ -1,4 +1,6 @@
-export const environment = {
+import { IEnvironment } from '@stack/models';
+
+export const environment: IEnvironment = {
   production: false,
-  mock: true
+  mock: true,
 };

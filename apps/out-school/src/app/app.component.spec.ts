@@ -1,9 +1,11 @@
-import { TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent, NxWelcomeComponent } from '@stack/out-school';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [AppComponent, NxWelcomeComponent],
     }).compileComponents();
   });
@@ -27,5 +29,16 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain(
       'Welcome out-school'
     );
+  });
+
+  it('should register the new user', (done: any) => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    fixture.componentInstance.login(callback);
+
+    function callback() {
+      console.log('done!');
+      done();
+    }
   });
 });
