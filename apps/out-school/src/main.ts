@@ -4,17 +4,21 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { setupWorker } from 'msw';
-import { handlers } from '@stack/mock-server';
+// import { setupWorker } from 'msw';
+// Removing static import in favor of dynamic import
 
-export const worker = setupWorker(...handlers);
+import { handlers } from '@stack/mock-server';
 
 if (environment.production) {
   enableProdMode();
 }
 
 if (environment.mock) {
-  worker.start();
+  const msw = import('msw');
+  msw.then(({ setupWorker }) => {
+    const worker = setupWorker(...handlers);
+    worker.start();
+  });
 }
 
 platformBrowserDynamic()
