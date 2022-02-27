@@ -1,4 +1,8 @@
-export const environment = {
+import { IEnvironment } from '@stack/models';
+import { commonEnvironment } from './environment.common';
+
+const env: Partial<IEnvironment> = {
   production: true,
-  mock: false
 };
+
+export const environment = { ...commonEnvironment, ...env };
