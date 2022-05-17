@@ -6,4 +6,4 @@ const notDefined = rest.all('*', (req, res, ctx) => {
   return res(ctx.status(200));
 });
 
-export const handlers = [login, register, notDefined];
+export const handlers = [login, register];
