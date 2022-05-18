@@ -89,6 +89,10 @@
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
+            "allowedCommonJsDependencies": [
+              "@mswjs/cookies",
+              "@mswjs/interceptors"
+            ],
             "outputPath": "dist/apps/out-school",
             "index": "apps/out-school/src/index.html",
             "main": "apps/out-school/src/main.ts",
