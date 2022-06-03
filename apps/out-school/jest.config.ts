@@ -1,14 +1,16 @@
-module.exports = {
-  displayName: 'mock-server',
+/* eslint-disable */
+export default {
+  displayName: 'out-school',
   preset: '../../jest.preset.js',
-  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  // fake-indexeddb/auto to fake the indexed db which will only work in the context of browser.
+  setupFilesAfterEnv: ['fake-indexeddb/auto', '<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/mock-server',
+  coverageDirectory: '../../coverage/apps/out-school',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

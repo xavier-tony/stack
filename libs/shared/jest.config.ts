@@ -1,15 +1,15 @@
-module.exports = {
-  displayName: 'out-school',
+/* eslint-disable */
+export default {
+  displayName: 'shared',
   preset: '../../jest.preset.js',
-  // fake-indexeddb/auto to fake the indexed db which will only work in the context of browser.
-  setupFilesAfterEnv: ['fake-indexeddb/auto', '<rootDir>/src/test-setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/out-school',
+  coverageDirectory: '../../coverage/libs/shared',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

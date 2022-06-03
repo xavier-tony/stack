@@ -11,7 +11,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/assets"],
           "options": {
-            "jestConfig": "libs/assets/jest.config.js",
+            "jestConfig": "libs/assets/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -37,7 +37,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/mock-server"],
           "options": {
-            "jestConfig": "libs/mock-server/jest.config.js",
+            "jestConfig": "libs/mock-server/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -63,7 +63,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/models"],
           "options": {
-            "jestConfig": "libs/models/jest.config.js",
+            "jestConfig": "libs/models/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -197,7 +197,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/out-school"],
           "options": {
-            "jestConfig": "apps/out-school/jest.config.js",
+            "jestConfig": "apps/out-school/jest.config.ts",
             "passWithNoTests": true
           }
         }
@@ -242,7 +242,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/services"],
           "options": {
-            "jestConfig": "libs/services/jest.config.js",
+            "jestConfig": "libs/services/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -285,7 +285,7 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/shared"],
           "options": {
-            "jestConfig": "libs/shared/jest.config.js",
+            "jestConfig": "libs/shared/jest.config.ts",
             "passWithNoTests": true
           }
         },
