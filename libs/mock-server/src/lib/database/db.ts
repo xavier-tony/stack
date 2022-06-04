@@ -22,6 +22,25 @@ export class MockDB extends Dexie {
       await this.populate();
       console.log('populated', await this.userTypes.count());
     });
+
+    this.users.hook('creating', function (obj) {
+      // You may return another object or modify existing object.
+      console.log('creating : ', obj);
+    });
+
+    this.users.hook('deleting', function (obj) {
+      // You may return another object or modify existing object.
+      console.log('deleting : ', obj);
+    });
+    this.users.hook('updating', function (obj) {
+      // You may return another object or modify existing object.
+      console.log('updating : ', obj);
+    });
+
+    this.users.hook('reading', function (obj) {
+      // You may return another object or modify existing object.
+      console.log('reading : ', obj);
+    });
   }
 
   populate(): any {
