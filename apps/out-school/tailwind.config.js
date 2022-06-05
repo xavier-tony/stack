@@ -3,7 +3,8 @@ const { join } = require('path');
 
 module.exports = {
   content: [
-    join(__dirname, 'src/**/*.{html,ts}'),
+    join( __dirname, 'src/**/*.{html,ts}' ),
+    "../../libs/**/*.{html,ts}",
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {

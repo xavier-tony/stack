@@ -18,10 +18,13 @@
     "esModuleInterop": true,
     "paths": {
       "@stack/assets": ["libs/assets/src/index.ts"],
+      "@stack/auth": ["libs/auth/src/index.ts"],
       "@stack/mock-server": ["libs/mock-server/src/index.ts"],
       "@stack/models": ["libs/models/src/index.ts"],
       "@stack/out-school": ["apps/out-school/src/index.ts"],
-      "@stack/services": ["libs/services/src/index.ts"]
+      "@stack/services": ["libs/services/src/index.ts"],
+      "@stack/shared/components": ["libs/shared/components/src/index.ts"],
+      "@stack/shared/ui-kit": ["libs/shared/ui-kit/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

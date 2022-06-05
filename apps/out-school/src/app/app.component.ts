@@ -13,6 +13,8 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {}
 
+
+
   login(callback?: Function) {
     console.log('login');
     this.loginSubscription = this.http
