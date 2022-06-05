@@ -1,0 +1,29 @@
+[
+  {
+    "name": "thread_name",
+    "ph": "M",
+    "pid": 62902,
+    "tid": 0,
+    "ts": 0,
+    "args": {
+      "name": "Group #1"
+    }
+  },
+  {
+    "name": "out-school:build:production",
+    "cat": "out-school,build,production",
+    "ph": "X",
+    "ts": 1741427.5330007076,
+    "dur": 22616892.786994576,
+    "pid": 62902,
+    "tid": 0,
+    "args": {
+      "target": {
+        "project": "out-school",
+        "target": "build",
+        "configuration": "production"
+      },
+      "status": "success"
+    }
+  }
+]

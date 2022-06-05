@@ -15,7 +15,8 @@
     "compodoc": "npx compodoc -p tsconfig.doc.json",
     "ngd": "npx ngd -p tsconfig.doc.json -o",
     "stats": "webpack-bundle-analyzer dist/apps/out-school/stats.json",
-    "analyze": "run-s \"build -- --prod --stats-json\" stats"
+    "analyze": "run-s \"build -- --prod --stats-json\" stats",
+    "profile": "NX_PROFILE=profile.json nx build $1"
   },
   "private": true,
   "dependencies": {
