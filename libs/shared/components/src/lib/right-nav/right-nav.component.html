@@ -1,8 +1,16 @@
-<div class="flex flex-1  items-center pr-5 justify-around">
-  <button mat-icon-button><mat-icon>apps</mat-icon></button>
+<div class="flex flex-1 items-center pr-5 justify-end">
+  <!-- <button mat-icon-button><mat-icon>apps</mat-icon></button>
   <button mat-icon-button><mat-icon>mail</mat-icon></button>
   <button mat-icon-button><mat-icon>campaign</mat-icon></button>
   <button mat-icon-button><mat-icon>menu</mat-icon></button>
-  <button mat-icon-button><mat-icon>person</mat-icon></button>
-  <button mat-icon-button><mat-icon>logout</mat-icon></button>
+  <button mat-icon-button><mat-icon>person</mat-icon></button> -->
+  <button title="Login" mat-button *ngIf="!loggedIn" (click)="login()">
+    <mat-icon>login</mat-icon> Login
+  </button>
+  <button title="Sign up" mat-button *ngIf="!loggedIn" (click)="signup()">
+    <mat-icon>person_add</mat-icon> Sign up
+  </button>
+  <button title="Logout" mat-button *ngIf="loggedIn" (click)="logout()">
+    Logout <mat-icon>logout</mat-icon>
+  </button>
 </div>

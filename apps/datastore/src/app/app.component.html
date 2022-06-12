@@ -1,0 +1,22 @@
+<main class="flex flex-col items-stretch justify-center px-16 pt-5">
+
+  <stack-search  [showDepartments]="false" (search)="filter($event)" ></stack-search>
+
+  <ng-container *ngFor="let table of tables | filtertables: searchString">
+    <stack-table
+      [data]="table.data$ | async"
+      [tableName]="table.name"
+    ></stack-table>
+  </ng-container>
+
+  <footer class="flex items-center justify-center sticky bottom-0 z-[101]">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="refresh()"
+      class="h-16 flex-1"
+    >
+      Refesh
+    </button>
+  </footer>
+</main>

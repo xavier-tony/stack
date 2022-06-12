@@ -1,0 +1,75 @@
+<div class="login__container">
+  <form [formGroup]="form">
+    <div class="input__container">
+      <mat-form-field
+        appearance="outline"
+        class="h-20 text-md text-slate-500 flex-1"
+      >
+        <mat-label>Email</mat-label>
+        <input
+          name="email"
+          type="email"
+          matInput
+          placeholder="email"
+          formControlName="email"
+          autocomplete="off"
+        />
+        <mat-icon matSuffix>alternate_email</mat-icon>
+        <mat-hint>Hint</mat-hint>
+        <mat-error *ngIf="email?.touched && email?.errors?.['required']"
+          >Email is required</mat-error
+        >
+        <mat-error *ngIf="email?.touched && email?.errors?.['email']"
+          >Email is not valid !</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="input__container">
+      <mat-form-field
+        appearance="outline"
+        class="h-20 text-md text-slate-500 flex-1"
+      >
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="showPassword ? 'text' : 'password'"
+          name="passwordInput"
+          id="passwordInput"
+          autocomplete="off"
+          formControlName="password"
+        />
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="showPassword = !showPassword"
+        >
+          <mat-icon *ngIf="showPassword">visibility</mat-icon>
+          <mat-icon *ngIf="!showPassword">visibility_off</mat-icon>
+        </button>
+        <mat-error *ngIf="password?.touched && password?.errors?.['required']"
+          >Password is required</mat-error>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="input__container">
+      <mat-checkbox formControlName="rememberMe" color="primary"
+        >Remember Me</mat-checkbox
+      >
+    </div>
+    <div class="input__container">
+      <button
+        mat-raised-button
+        [disabled]="!form.valid"
+        color="primary"
+        class="flex-1"
+        (click)="onLoginClicked()"
+      >
+        <mat-icon>login</mat-icon> Login
+      </button>
+    </div>
+    <div class="input__container">
+      <a [routerLink]="['/forgot-password/request']">Forgot Password</a>
+    </div>
+  </form>
+</div>

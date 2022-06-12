@@ -1,0 +1,103 @@
+<ng-container [formGroup]="form" class="flex flex-col">
+  <mat-form-field appearance="outline" class="h-20 text-md text-slate-500">
+    <mat-label>Display Name</mat-label>
+    <input
+      #displayName
+      matInput
+      placeholder="Display Name"
+      class="hover:border-slate-200"
+      formControlName="displayname"
+    />
+    <mat-icon class="text-teal-700" matSuffix>user</mat-icon>
+    <mat-hint align="end">{{ displayName.value.length }} / 50</mat-hint>
+    <mat-error *ngIf="displayNameLengthError"> Error on the length </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="h-20 text-md text-slate-500">
+    <mat-label>Phone</mat-label>
+    <input
+      type="tel"
+      matInput
+      placeholder="***-***-****"
+      class="hover:border-slate-200"
+      formControlName="phone"
+    />
+    <mat-icon class="text-teal-700" matSuffix>user</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dob" />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div class="qualifications flex flex-col items-center justify-center my-4">
+    <ng-container formArrayName="qualifications">
+      <ng-container
+        *ngFor="let qualification of qualifications.controls; let i = index"
+      >
+        <!--TODO: Not sure why its working with [formGroupName]="i" instead of [formGroup]="qualification" which gives this error [ error TS2740: Type 'AbstractControl<any, any>' is missing the following properties from type 'FormGroup<any>': controls, registerControl, addControl, removeControl, and 2 more. ] -->
+        <div class="flex items-center justify-center" [formGroupName]="i">
+          <mat-form-field
+            appearance="outline"
+            class="h-20 text-md text-slate-500"
+          >
+            <mat-label>Qualification</mat-label>
+            <input
+              #qualification
+              matInput
+              placeholder="Qualification"
+              class="hover:border-slate-200"
+              formControlName="name"
+            />
+            <mat-icon class="text-teal-700" matSuffix>user</mat-icon>
+            <mat-hint align="end">Enter name</mat-hint>
+          </mat-form-field>
+          <button mat-icon-button (click)="deleteQualification(i)">
+            <mat-icon class="mat-18 text-red-600">delete</mat-icon>
+          </button>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <button
+      mat-mini-fab
+      class="bg-gradient-to-r from-cyan-500 to-blue-500"
+      aria-label="Example icon button with a menu icon"
+      (click)="addQualification()"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <!-- <mat-form-field
+    appearance="outline"
+    class="h-20 text-md  text-slate-500"
+  >
+    <mat-label>Qualification</mat-label>
+    <input
+      type="tel"
+      matInput
+      placeholder="***-***-****"
+      class="hover:border-slate-200"
+      formControlName="qualifications"
+    />
+    <mat-icon class="text-teal-700" matSuffix>user</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field> -->
+
+  <stack-file-upload formControlName="files"></stack-file-upload>
+  <!-- <ng-container *ngIf="files$ | async as files">
+    <a
+      *ngFor="let file of files"
+      [href]="file.file"
+      [attr.download]="file.name"
+      class=" text-white font-semibold ring-1 rounded-md p-2 justify-start self-start m-2 ring-slate-300 bg-gradient-to-r from-cyan-500 to-blue-500"
+    >
+      {{ file.name }}
+    </a>
+  </ng-container> -->
+</ng-container>

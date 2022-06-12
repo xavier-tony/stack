@@ -1,66 +1,78 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { APP_INITIALIZER, NgModule } from '@angular/core';
+// import { BrowserModule } from '@angular/platform-browser';
+// import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Store
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+// // Store
+// import { StoreModule } from '@ngrx/store';
+// import { EffectsModule } from '@ngrx/effects';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-// Material
-import { MatIconModule } from '@angular/material/icon';
-// import { MatInputModule } from '@angular/material/input';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-// import { MatMenuModule } from '@angular/material/menu';
-// import { MatListModule } from '@angular/material/list';
-// import { MatRippleModule } from '@angular/material/core';
+// // Material
+// import { MatIconModule } from '@angular/material/icon';
+// import { MatButtonModule } from '@angular/material/button';
+// import { MatSidenavModule } from '@angular/material/sidenav';
 
-// Custom
-import { AppComponent, environment } from '@stack/out-school';
-import { ENVIRONMENT } from '@stack/services';
+// // Custom
+// import { AppComponent, environment } from '@stack/out-school';
+// import { ENVIRONMENT } from '@stack/services';
 
-import { AuthModule } from '@stack/auth';
-import { SharedComponentsModule } from '@stack/shared/components';
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    StoreModule.forRoot(
-      {},
-      {
-        metaReducers: !environment.production ? [] : [],
-        runtimeChecks: {
-          strictActionImmutability: true,
-          strictStateImmutability: true,
-        },
-      }
-    ),
-    EffectsModule.forRoot([]),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
-    AuthModule,
-    MatIconModule,
-    // MatInputModule,
-    // MatFormFieldModule,
-    // MatSelectModule,
-    MatButtonModule,
-    MatSidenavModule,
-    // MatMenuModule,
-    // MatListModule,
-    // MatRippleModule,
-    SharedComponentsModule,
-  ],
-  providers: [
-    {
-      provide: ENVIRONMENT,
-      useValue: environment,
-    },
-  ],
-  bootstrap: [AppComponent],
-})
-export class AppModule {}
+// import {
+//   CustomSerializer,
+//   RoutingModule,
+//   SharedComponentsModule,
+// } from '@stack/shared/components';
+// import { AppRoutingModule } from './app.routing.module';
+// import { StoreRouterConnectingModule } from '@ngrx/router-store';
+// import { appReducer } from './+state/app.reducer';
+// import { LoginInitService } from './initializers';
+
+// export function refreshLogin(loginInitService: LoginInitService) {
+//   return loginInitService.refreshLogin();
+// }
+// @NgModule({
+//   declarations: [AppComponent],
+//   imports: [
+//     BrowserModule,
+//     BrowserAnimationsModule,
+//     HttpClientModule,
+//     StoreModule.forRoot(appReducer, {
+//       metaReducers: !environment.production ? [] : [],
+//       runtimeChecks: {
+//         strictActionImmutability: true,
+//         strictStateImmutability: true,
+//       },
+//     }),
+//     EffectsModule.forRoot([]),
+//     StoreRouterConnectingModule.forRoot({
+//       serializer: CustomSerializer,
+//       // TODO: Can be removed since we have the routing reducer to track the router conf. Also check  to see if we need to set the NavigationActionTiming to PostActivation
+//     }),
+//     !environment.production ? StoreDevtoolsModule.instrument() : [],
+//     MatIconModule,
+//     MatButtonModule,
+//     MatSidenavModule,
+//     SharedComponentsModule,
+//     AppRoutingModule,
+//     RoutingModule,
+//     HttpClientXsrfModule.withOptions({
+//       cookieName: 'XSRF-TOKEN',
+//       headerName: 'x-xsrf-token',
+//     }),
+//   ],
+//   providers: [
+//     {
+//       provide: ENVIRONMENT,
+//       useValue: environment,
+//     },
+//     {
+//       provide: APP_INITIALIZER,
+
+//       useFactory: refreshLogin,
+//       deps: [LoginInitService],
+//       multi: true,
+//     },
+//   ],
+//   bootstrap: [AppComponent],
+// })
+// export class AppModule {}

@@ -1,3 +1,4 @@
 {
-  "jest.jestCommandLine": "nx test"
+  "jest.jestCommandLine": "nx test".
+  "scss.lint.unknownAtRules": "ignore"
 }

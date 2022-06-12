@@ -1,12 +1,12 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed, waitForAsync } from '@angular/core/testing';
-import { AppComponent, NxWelcomeComponent } from '@stack/out-school';
+import { AppComponent } from '@stack/out-school';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      declarations: [AppComponent, NxWelcomeComponent],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
