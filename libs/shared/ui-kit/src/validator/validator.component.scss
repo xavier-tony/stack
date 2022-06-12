@@ -1,0 +1,27 @@
+:host {
+  @apply text-xs bg-white rounded;
+  .validator__container {
+    @apply rounded-md border;
+    &.valid {
+      @apply border border-green-300;
+    }
+
+    &.invalid {
+      @apply border border-red-200;
+    }
+    .header {
+      @apply flex items-center justify-center h-10 rounded-t-md border-b;
+      &.valid {
+        @apply text-green-600  bg-green-100  border-green-200;
+      }
+
+      &.invalid {
+        @apply text-red-600  bg-red-100  border-red-200;
+      }
+    }
+
+    .mat-icon {
+      @apply text-sm mr-2 h-auto w-auto;
+    }
+  }
+}

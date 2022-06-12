@@ -1,5 +1,11 @@
-<header class="flex flex-1 items-stretch h-14 bg-white border-b border-slate-200">
+<header class="main__header">
   <stack-logo></stack-logo>
   <stack-search></stack-search>
-  <stack-right-nav></stack-right-nav>
+  <stack-right-nav
+    [loggedIn]="loggedIn$ | async"
+    [user]="user$ | async"
+    (loginEvent)="onLogin()"
+    (logoutEvent)="onLogout()"
+    (signupEvent)="onSignUp()"
+  ></stack-right-nav>
 </header>

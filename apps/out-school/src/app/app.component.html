@@ -1,6 +1,14 @@
 <main class="flex flex-col text-slate-500">
   <div class="color-line"></div>
   <stack-header></stack-header>
-  <stack-main-container></stack-main-container>
+
+  <div class="content__wrapper">
+    <router-outlet></router-outlet>
+  </div>
+
+  <a href="#" routerLink="/dashboard">dash</a>
+
+  <!-- <stack-main-container>
+  </stack-main-container> -->
   <stack-footer></stack-footer>
 </main>

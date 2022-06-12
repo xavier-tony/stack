@@ -1,0 +1,26 @@
+<div class="signup__container">
+  <form [formGroup]="form" class="flex flex-col flex-1">
+    <mat-radio-group
+      class="py-4 flex items-center justify-between"
+      formControlName="userType"
+    >
+      <mat-radio-button
+        *ngFor="let userType of userTypes"
+        [value]="userType.value"
+        >{{ userType.key }}</mat-radio-button
+      >
+    </mat-radio-group>
+    <stack-signup formGroupName="signup"></stack-signup>
+
+    <button
+      [disabled]="!form.valid"
+      mat-raised-button
+      (click)="onSignup()"
+      color="primary"
+    >
+      Sign up <mat-icon>person_add</mat-icon>
+    </button>
+
+    <a class="flex items-center justify-center p-4 cursor-pointer"   (click)="form.reset()">Reset</a>
+  </form>
+</div>

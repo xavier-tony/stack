@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { FooterComponent } from './footer/footer.component';
 
-import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './logo/logo.component';
 import { RightNavComponent } from './right-nav/right-nav.component';
 import { SearchComponent } from './search/search.component';
@@ -12,6 +10,10 @@ import { MainContainerComponent } from './main-container/main-container.componen
 import { AuthModule } from '@stack/auth';
 import { CommonModule } from '@angular/common';
 // import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { routes } from './routes';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -19,18 +21,12 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatSidenavModule,
     AuthModule,
-    CommonModule
-    // ReactiveFormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
   ],
-  exports: [HeaderComponent, FooterComponent, MainContainerComponent],
-  declarations: [
-    RightNavComponent,
-    SearchComponent,
-    LogoComponent,
-    HeaderComponent,
-    FooterComponent,
-    MainContainerComponent,
-  ],
+  exports: [MainContainerComponent],
+  declarations: [MainContainerComponent, HomeComponent],
   providers: [],
 })
 export class SharedComponentsModule {}

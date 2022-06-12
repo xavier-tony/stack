@@ -1,0 +1,35 @@
+<div
+  class="validator__container"
+  [class.valid]="valid && !dirty"
+  [class.invalid]="!valid && !dirty"
+>
+  <header
+    class="flex header"
+    *ngIf="validation?.heading"
+    [class.valid]="valid && !dirty"
+    [class.invalid]="!valid && !dirty"
+  >
+    <mat-icon class="mr-2">done_all</mat-icon>
+    {{ validation?.heading }}
+  </header>
+  <div class="validator__content p-3">
+    <section
+      class="validation__message flex items-center justify-start"
+      *ngFor="let message of validation?.messages"
+      [class.text-gray-500]="message.valid === undefined"
+      [class.text-red-600]="message.valid === false"
+      [class.text-green-600]="message.valid"
+    >
+      <!-- <mat-hint class="flex items-center justify-center"> -->
+      <aside class="flex items-center justify-center">
+        <mat-icon *ngIf="message.valid === undefined"
+          >fiber_manual_record</mat-icon
+        >
+        <mat-icon *ngIf="message.valid === false">clear</mat-icon>
+        <mat-icon *ngIf="message.valid">done</mat-icon>
+      </aside>
+      <article>{{ message.message }}</article>
+      <!-- </mat-hint> -->
+    </section>
+  </div>
+</div>
