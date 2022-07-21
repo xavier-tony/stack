@@ -1,4 +1,4 @@
-export interface Search{
-	department: string;
-	searchString: string;
+export interface Search {
+  department: string;
+  searchString: string;
 }

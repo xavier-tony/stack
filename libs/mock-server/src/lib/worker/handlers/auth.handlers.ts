@@ -11,10 +11,7 @@ const registerService = new RegisterService();
 export const register = rest.post('/api/register', async (req, res, ctx) => {
   const payload = req.body as IRegisterRequest;
   const user = await registerService.register(payload);
-  return res(
-    ctx.status(HttpStatusCode.Ok),
-    ctx.json(user)
-  );
+  return res(ctx.status(HttpStatusCode.Ok), ctx.json(user));
 });
 
 export const login = rest.post('/api/login', (req, res, ctx) => {

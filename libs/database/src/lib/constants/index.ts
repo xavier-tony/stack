@@ -1,1 +1,1 @@
-export * from './json-files.constants'
+export * from './json-files.constants';

@@ -48,7 +48,8 @@
           <mat-icon *ngIf="!showPassword">visibility_off</mat-icon>
         </button>
         <mat-error *ngIf="password?.touched && password?.errors?.['required']"
-          >Password is required</mat-error>
+          >Password is required</mat-error
+        >
         <mat-hint>Hint</mat-hint>
       </mat-form-field>
     </div>

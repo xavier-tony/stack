@@ -15,8 +15,10 @@ import {
 @Directive({
   // the selector used for DefaultValueAccessor
   selector:
+    // eslint-disable-next-line @angular-eslint/directive-selector
     'input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]',
 })
+// eslint-disable-next-line @angular-eslint/directive-class-suffix
 export class AutofillValueAccessor {
   autofilled = false;
 
@@ -38,7 +40,7 @@ export class AutofillValueAccessor {
   ngOnInit() {
     this._autofillMonitor
       .monitor(this._elementRef.nativeElement)
-      .subscribe((event) => {
+      .subscribe(event => {
         this.autofilled = event.isAutofilled;
         this._valueAccessor.onChange(this._elementRef.nativeElement.value);
       });

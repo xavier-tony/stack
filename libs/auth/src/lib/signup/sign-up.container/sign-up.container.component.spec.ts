@@ -1,16 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SignUpContainerComponent } from './sign-up.container.component';
 
-import { SignUp.ContainerComponent } from './sign-up.container.component';
-
-describe('SignUp.ContainerComponent', () => {
-  let component: SignUp.ContainerComponent;
-  let fixture: ComponentFixture<SignUp.ContainerComponent>;
+describe('SignUpContainerComponent', () => {
+  let component: SignUpContainerComponent;
+  let fixture: ComponentFixture<SignUpContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignUp.ContainerComponent ]
-    })
-    .compileComponents();
+      declarations: [SignUpContainerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -3,7 +3,7 @@ import { commonEnvironment } from './environment.common';
 
 const env: Partial<IEnvironment> = {
   production: true,
-  env: 'prod'
+  env: 'prod',
 };
 
 export const environment = { ...commonEnvironment, ...env };

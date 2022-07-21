@@ -27,7 +27,7 @@ import { UIKitModule } from '@stack/shared/ui-kit';
     MatButtonModule,
     MatSnackBarModule,
     UIKitModule,
-    RouterModule.forChild(signupRoutes)
+    RouterModule.forChild(signupRoutes),
   ],
   exports: [],
   declarations: [SignupComponent, SignUpContainerComponent],

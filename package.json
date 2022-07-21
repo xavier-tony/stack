@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main && husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpack": "pinst --enable",
     "start": "nx serve",
     "serve:mock": "nx serve -c=mock",
     "build": "nx build",
@@ -20,7 +22,8 @@
     "profile": "NX_PROFILE=profile.json nx build $1",
     "start:api": "nx serve api-school",
     "start:api:debug": "nx serve api-school --inspect",
-    "start:store": "nx serve datastore"
+    "start:store": "nx serve datastore",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -68,6 +71,8 @@
     "@angular/cli": "14.0.0",
     "@angular/compiler-cli": "14.0.0",
     "@angular/language-service": "14.0.0",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-angular": "^17.0.3",
     "@compodoc/compodoc": "^1.1.19",
     "@compodoc/ngd-cli": "^2.1.0",
     "@nestjs/schematics": "^8.0.0",
@@ -98,19 +103,24 @@
     "@typescript-eslint/parser": "5.18.0",
     "autoprefixer": "^10.4.0",
     "chalk": "^4.1.2",
+    "commitizen": "^4.2.5",
     "cypress": "^9.1.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.12.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
     "fake-indexeddb": "3.1.8",
     "http-server": "^14.1.0",
+    "husky": "^8.0.1",
     "jasmine-marbles": "~0.9.1",
     "jest": "27.5.1",
     "jest-environment-jsdom-sixteen": "^2.0.0",
     "jest-preset-angular": "11.1.1",
+    "lint-staged": "^13.0.3",
     "ng-packagr": "14.0.0",
     "npm-run-all": "^4.1.5",
     "nx": "14.1.9",
+    "pinst": "^3.0.0",
     "postcss": "^8.4.5",
     "postcss-import": "14.1.0",
     "postcss-preset-env": "7.5.0",
@@ -127,5 +137,10 @@
   },
   "msw": {
     "workerDirectory": "libs/assets/src/lib/js/mockServiceWorker.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

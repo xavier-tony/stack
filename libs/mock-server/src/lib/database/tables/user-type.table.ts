@@ -1,4 +1,4 @@
-export interface TUserType{
-	id?: number;
-	type: string;
+export interface TUserType {
+  id?: number;
+  type: string;
 }

@@ -5,5 +5,5 @@ export interface ForgotPasswordCodeTable {
   code: string;
   token?: string;
   passwordUpdated?: boolean;
-  obsolete?: boolean
+  obsolete?: boolean;
 }

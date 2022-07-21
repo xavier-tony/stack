@@ -1,15 +1,6 @@
-import {
-  RouterAction,
-  RouterNavigatedAction,
-  routerNavigatedAction,
-  routerNavigationAction,
-  RouterNavigationAction,
-  ROUTER_NAVIGATED,
-  ROUTER_NAVIGATION,
-} from '@ngrx/router-store';
-import { createReducer, on, State, Action } from '@ngrx/store';
+import { routerNavigatedAction } from '@ngrx/router-store';
+import { Action, createReducer, on } from '@ngrx/store';
 import { RoutingState } from '@stack/models';
-
 
 export const initialRouterState: RoutingState = {
   state: {} as any,

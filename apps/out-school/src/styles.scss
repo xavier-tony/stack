@@ -12,26 +12,24 @@ body {
   margin: 0;
 }
 
-::placeholder{
+::placeholder {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-
-.mat-form-field-outline{
-  @apply bg-white 
+.mat-form-field-outline {
+  @apply bg-white;
 }
 
-.mat-snack-bar-container{
-  &.error{
+.mat-snack-bar-container {
+  &.error {
     @apply bg-red-300 text-red-900;
-    & .mat-button{
+    & .mat-button {
       @apply text-red-900;
     }
   }
 }
 
-
-button.mat-raised-button{
+button.mat-raised-button {
   @apply py-2 px-12;
 }
 
@@ -51,4 +49,3 @@ select:-webkit-autofill:focus {
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
-

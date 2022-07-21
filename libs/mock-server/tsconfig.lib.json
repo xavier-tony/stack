@@ -13,5 +13,9 @@
     "**/*.test.ts",
     "jest.config.ts"
   ],
-  "include": ["**/*.ts", "../models/src/lib/interfaces/register.interface.ts", "../services/src/lib/utils/file.service.ts"]
+  "include": [
+    "**/*.ts",
+    "../models/src/lib/interfaces/register.interface.ts",
+    "../services/src/lib/utils/file.service.ts"
+  ]
 }

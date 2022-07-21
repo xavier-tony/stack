@@ -1,6 +1,8 @@
 <main class="flex flex-col items-stretch justify-center px-16 pt-5">
-
-  <stack-search  [showDepartments]="false" (search)="filter($event)" ></stack-search>
+  <stack-search
+    [showDepartments]="false"
+    (search)="filter($event)"
+  ></stack-search>
 
   <ng-container *ngFor="let table of tables | filtertables: searchString">
     <stack-table

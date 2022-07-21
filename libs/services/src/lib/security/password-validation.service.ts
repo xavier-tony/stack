@@ -4,7 +4,6 @@ import { Validation } from '@stack/models';
 
 @Injectable({ providedIn: 'root' })
 export class PasswordValidationService {
-  constructor() {}
   passwordValidationRules: Validation = {
     heading: 'Password rules',
     messages: [
@@ -41,7 +40,7 @@ export class PasswordValidationService {
     ],
   };
 
-  updateValidations<T extends { [K in keyof T]: AbstractControl<any, any>; }>(
+  updateValidations<T extends { [K in keyof T]: AbstractControl<any, any> }>(
     passwordValidationRules: Validation,
     form: FormGroup<T>,
     controlName: string

@@ -1,13 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'stack-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  standalone: true
+  standalone: true,
 })
-export class FooterComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class FooterComponent {}

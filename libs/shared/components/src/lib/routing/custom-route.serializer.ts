@@ -1,8 +1,10 @@
-import { Params, RouterStateSnapshot } from '@angular/router';
+import { RouterStateSnapshot } from '@angular/router';
 import { RouterStateSerializer } from '@ngrx/router-store';
-import { RoutingStateUrl } from '../../../../../models/src/lib/interfaces/routing.interface';
+import { RoutingStateUrl } from '@stack/models';
 
-export class CustomSerializer implements RouterStateSerializer<RoutingStateUrl> {
+export class CustomSerializer
+  implements RouterStateSerializer<RoutingStateUrl>
+{
   serialize(routerState: RouterStateSnapshot): RoutingStateUrl {
     let route = routerState.root;
 
