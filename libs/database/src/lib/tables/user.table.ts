@@ -1,5 +1,3 @@
-
-
 export interface UserTable {
   id: number;
   userTypeId: number;

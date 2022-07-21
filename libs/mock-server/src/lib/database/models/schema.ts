@@ -4,5 +4,5 @@ export const schema = {
   parents: '++id, userId',
   students: '++id, userId',
   teachers: '++id, userId',
-  files: '++id' 
+  files: '++id',
 };

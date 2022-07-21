@@ -32,7 +32,7 @@
       "@stack/services": ["libs/services/src/index.ts"],
       "@stack/shared/components": ["libs/shared/components/src/index.ts"],
       "@stack/shared/ui-kit": ["libs/shared/ui-kit/src/index.ts"],
-      "@stack/dashboard":["libs/shared/components/src/lib/dashboard/index.ts"]
+      "@stack/dashboard": ["libs/shared/components/src/lib/dashboard/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

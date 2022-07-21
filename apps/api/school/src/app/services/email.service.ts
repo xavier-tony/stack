@@ -5,14 +5,12 @@ https://docs.nestjs.com/providers#services
 import { Injectable } from '@nestjs/common';
 import { Email } from '@stack/models';
 import * as nodemailer from 'nodemailer';
-import * as util from 'util';
-import { catchError } from 'rxjs';
 import voca from 'voca';
 
 @Injectable()
 export class EmailService {
   async mockEmail(email: Email) {
-    let testAccount = await nodemailer.createTestAccount();
+    const testAccount = await nodemailer.createTestAccount();
 
     const transporter = nodemailer.createTransport({
       host: 'smtp.ethereal.email',
@@ -51,7 +49,7 @@ export class EmailService {
     // });
 
     // send mail with defined transport object
-    let info = await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
 
     console.log('Message sent: %s', info.messageId);
     // Preview only available when sending through an Ethereal account

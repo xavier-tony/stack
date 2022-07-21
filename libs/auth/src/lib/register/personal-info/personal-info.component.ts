@@ -25,7 +25,7 @@ export class PersonalInfoComponent implements OnInit {
   @Input() formGroupName!: string;
   files$: Observable<IFile[]> = this.fileService.getFiles().pipe(
     map((files: IFile[]) =>
-      files.map((file) => ({
+      files.map(file => ({
         ...file,
         file: file.file
           ? this.sanitizer.bypassSecurityTrustResourceUrl(file.file)
@@ -59,7 +59,7 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   addQualification() {
-    let qualification = this.formBuilder.group({
+    const qualification = this.formBuilder.group({
       name: new FormControl('', [Validators.required]),
     }) as FormGroup;
     this.qualifications.push(qualification);

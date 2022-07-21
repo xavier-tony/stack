@@ -1,10 +1,9 @@
 import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
 import { UserTypes } from '@stack/models';
+import chalk from 'chalk';
 import { Request, Response } from 'express';
-import { request } from 'http';
 import { StatusCodes } from 'http-status-codes';
 import { AuthService } from './auth.service';
-import chalk from 'chalk';
 
 @Controller()
 export class AuthController {

@@ -4,10 +4,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import {
-  FormGroup,
-  FormGroupDirective,
-} from '@angular/forms';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
 import { SignupFormGroup, UserTypes, Validation } from '@stack/models';
 import { PasswordValidationService } from '@stack/services';
 import { tap } from 'rxjs/operators';
@@ -50,7 +47,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private formGroupDirective: FormGroupDirective,
-    private passwordValidationService: PasswordValidationService  ) {}
+    private passwordValidationService: PasswordValidationService
+  ) {}
 
   ngOnInit(): void {
     this.initialize();

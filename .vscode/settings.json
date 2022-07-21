@@ -1,4 +1,9 @@
 {
-  "jest.jestCommandLine": "nx test".
-  "scss.lint.unknownAtRules": "ignore"
+  "jest.jestCommandLine": "nx test",
+  "scss.lint.unknownAtRules": "ignore",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true,
+    "source.sortMembers": true
+  }
 }

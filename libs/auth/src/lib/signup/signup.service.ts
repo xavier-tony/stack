@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Injectable } from '@angular/core';
 import {
   KeyValue,
@@ -8,7 +9,7 @@ import {
 } from '@stack/models';
 import { getAllEnumKeys } from 'enum-for';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import * as AuthActions from '@stack/auth';
+import * as AuthActions from '../+state/auth.actions';
 import { AuthFacade } from '../+state/auth.facade';
 import { PasswordValidatorService } from '@stack/services';
 
@@ -119,6 +120,4 @@ export class SignupService {
     };
     return passwordValidationRules;
   }
-
-
 }

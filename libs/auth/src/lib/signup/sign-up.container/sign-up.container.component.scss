@@ -1,6 +1,6 @@
-:host{
-	@apply flex flex-col items-center justify-center;
-	& .signup__container{
-		@apply bg-white w-[500px] p-8 flex items-center justify-center rounded-md max-w-full
-	}
+:host {
+  @apply flex flex-col items-center justify-center;
+  & .signup__container {
+    @apply bg-white w-[500px] p-8 flex items-center justify-center rounded-md max-w-full;
+  }
 }

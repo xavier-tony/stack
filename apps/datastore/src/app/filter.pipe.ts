@@ -7,7 +7,10 @@ import { Table } from './table.model';
 export class FilterTablesPipe implements PipeTransform {
   transform(tables: Table[], searchString: string): any {
     return tables
-      .filter((table) => table.name.toLowerCase().indexOf(searchString.toLowerCase()) > -1)
+      .filter(
+        table =>
+          table.name.toLowerCase().indexOf(searchString.toLowerCase()) > -1
+      )
       .slice();
   }
 }

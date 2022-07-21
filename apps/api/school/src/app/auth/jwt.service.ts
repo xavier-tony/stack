@@ -1,22 +1,21 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import * as crypto from 'crypto';
 import * as util from 'util';
 
 import * as jwt from 'jsonwebtoken';
-import { cwd } from 'process';
-import { HttpStatusCode } from '@angular/common/http';
-import { RSA_FORGOT_PASSWORD_TOKEN_PUBLIC_KEY } from '../config/config';
-import {
-  ACCESS_TOKEN_EXPIRES_IN,
-  FORGOT_PASSWORD_TOKEN_EXPIRES_IN,
-  REFRESH_TOKEN_EXPIRES_IN,
-  RSA_FORGOT_PASSWORD_TOKEN_PRIVATE_KEY,
-} from '../config/config';
 import {
   RSA_ACCESS_TOKEN_PRIVATE_KEY,
   RSA_ACCESS_TOKEN_PUBLIC_KEY,
   RSA_REFRESH_TOKEN_PRIVATE_KEY,
   RSA_REFRESH_TOKEN_PUBLIC_KEY,
 } from '../config';
+import {
+  ACCESS_TOKEN_EXPIRES_IN,
+  FORGOT_PASSWORD_TOKEN_EXPIRES_IN,
+  REFRESH_TOKEN_EXPIRES_IN,
+  RSA_FORGOT_PASSWORD_TOKEN_PRIVATE_KEY,
+  RSA_FORGOT_PASSWORD_TOKEN_PUBLIC_KEY,
+} from '../config/config';
 
 const randomBytes = util.promisify(crypto.randomBytes);
 const signJwt: Function = util.promisify(jwt.sign);

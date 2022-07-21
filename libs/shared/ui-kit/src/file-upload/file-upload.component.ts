@@ -1,11 +1,7 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { HttpEventType } from '@angular/common/http';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   AbstractControl,
   ControlValueAccessor,
@@ -16,7 +12,7 @@ import {
 } from '@angular/forms';
 import { IFile } from '@stack/models';
 import { FileService } from '@stack/services';
-import { catchError, of, finalize } from 'rxjs';
+import { catchError, finalize, of } from 'rxjs';
 
 @Component({
   selector: 'stack-file-upload',
@@ -37,7 +33,7 @@ import { catchError, of, finalize } from 'rxjs';
 })
 export class FileUploadComponent implements ControlValueAccessor, Validator {
   files: IFile[] = [];
-  disabled: boolean = false;
+  disabled = false;
   @Output() filesSelected = new EventEmitter<File[]>();
 
   onUploadClicked(fileUploadInput: HTMLInputElement) {
@@ -54,7 +50,7 @@ export class FileUploadComponent implements ControlValueAccessor, Validator {
   }
 
   async uploadFiles(files: File[]) {
-    files.forEach(async (f) => {
+    files.forEach(async f => {
       const fileToUpload: IFile = await this.fileService.getBase64(f);
       const { file, ...onlyMetadata } = fileToUpload;
       if (fileToUpload) this.files.push(onlyMetadata);
@@ -68,13 +64,13 @@ export class FileUploadComponent implements ControlValueAccessor, Validator {
     return this.fileService
       .upload(file)
       .pipe(
-        catchError((error) => {
+        catchError(error => {
           this.updateError(file, error);
           return of(error);
         }),
         finalize(() => this.updateProgress(file, null))
       )
-      .subscribe((event) => {
+      .subscribe(event => {
         console.log(event.type);
         if (event.type === HttpEventType.UploadProgress && event.total) {
           this.updateProgress(
@@ -92,14 +88,14 @@ export class FileUploadComponent implements ControlValueAccessor, Validator {
   }
 
   updateId(file: IFile, id: number) {
-    const fileToUpdate = this.files.find((f) => f.clientId === file.clientId);
+    const fileToUpdate = this.files.find(f => f.clientId === file.clientId);
     if (fileToUpdate) fileToUpdate.id = id;
   }
 
   updateProgress(file: IFile, progress: number | null) {
     console.log(file.name, progress);
     this.files = [
-      ...this.files.map((f) => ({
+      ...this.files.map(f => ({
         ...f,
         progress: f.clientId === file.clientId ? progress : f.progress,
       })),
@@ -108,7 +104,7 @@ export class FileUploadComponent implements ControlValueAccessor, Validator {
 
   updateUploadStatus(file: IFile, uploaded: boolean) {
     this.files = [
-      ...this.files.map((f) => ({
+      ...this.files.map(f => ({
         ...f,
         uploaded: f.clientId === file.clientId ? uploaded : f.uploaded,
         progress: f.clientId === file.clientId ? null : f.progress,
@@ -118,7 +114,7 @@ export class FileUploadComponent implements ControlValueAccessor, Validator {
 
   updateError(file: IFile, error: string) {
     this.files = [
-      ...this.files.map((f) => ({
+      ...this.files.map(f => ({
         ...f,
         error: f.clientId === file.clientId ? error : f.error,
         uploaded: f.clientId === file.clientId ? false : f.uploaded,
@@ -150,7 +146,7 @@ export class FileUploadComponent implements ControlValueAccessor, Validator {
   }
 
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
-    const anyFailed = this.files.some((file) => !!file.error);
+    const anyFailed = this.files.some(file => !!file.error);
     if (anyFailed)
       return {
         uploadFailed: true,

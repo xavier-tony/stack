@@ -1,13 +1,13 @@
-:host{
-	@apply flex items-center justify-center;
-	.login__container{
-		@apply flex flex-col justify-center items-stretch w-[400px] bg-white p-8 rounded-md;
-		form{
-			@apply flex flex-col ;
+:host {
+  @apply flex items-center justify-center;
+  .login__container {
+    @apply flex flex-col justify-center items-stretch w-[400px] bg-white p-8 rounded-md;
+    form {
+      @apply flex flex-col;
 
-			& .input__container{
-				@apply flex py-2 items-stretch justify-center;
-			}
-		}
-	}
+      & .input__container {
+        @apply flex py-2 items-stretch justify-center;
+      }
+    }
+  }
 }
