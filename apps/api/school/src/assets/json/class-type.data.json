@@ -1,0 +1,24 @@
+{
+  "1": {
+    "id": 1,
+    "type": "Single Session",
+    "description": "Just one session, but it can be add in multiple timings."
+  },
+  "2": {
+    "id": 2,
+    "type": "Group Session"
+  },
+  "3": {
+    "id": 3,
+    "type": "Project"
+  },
+  "4": {
+    "id": 4,
+    "type": "Support"
+  },
+  "5": {
+    "id": 5,
+    "type": "Course",
+    "description": "Can add a multiple sessions into a group, you can also add the group for different timings."
+  }
+}

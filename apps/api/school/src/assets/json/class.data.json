@@ -1,0 +1,14 @@
+{
+  "1": {
+    "id": 1,
+    "sessionId": 1,
+    "startTime": "1/1/2022 1 PM",
+    "endTime": "1/1/2022 1 PM"
+  },
+  "2": {
+    "id": 2,
+    "sessionId": 1,
+    "startTime": "1/1/2022 3 PM",
+    "endTime": "1/1/2022 4 PM"
+  }
+}

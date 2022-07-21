@@ -1,0 +1,17 @@
+{
+  "1": {
+    "id": 1,
+    "scheduleCode": "ONETIME",
+    "description": "This session is only onetime. Select the date and that's it. You can still create multiple timings"
+  },
+  "2": {
+    "id": 2,
+    "scheduleCode": "RECURRING",
+    "description": "This session is recurring. Select the dates that is recurring every week/month/year"
+  },
+  "3": {
+    "id": 3,
+    "scheduleCode": "VARIABLE",
+    "description": "Create multiple sessions "
+  }
+}
