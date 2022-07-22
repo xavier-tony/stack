@@ -23,7 +23,8 @@
     "start:api": "nx serve api-school",
     "start:api:debug": "nx serve api-school --inspect",
     "start:store": "nx serve datastore",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "nx workspace-lint && nx format:write"
   },
   "private": true,
   "dependencies": {

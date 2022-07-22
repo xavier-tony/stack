@@ -1,0 +1,14 @@
+{
+  "1": {
+    "id": 1,
+    "medium": "Video"
+  },
+  "2": {
+    "id": 2,
+    "medium": "Chat"
+  },
+  "3": {
+    "id": 3,
+    "medium": "Phone"
+  }
+}

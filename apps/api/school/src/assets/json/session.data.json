@@ -1,0 +1,36 @@
+{
+  "1": {
+    "id": 1,
+    "name": "Wild Animals",
+    "classGroupId": 1,
+    "classTypeId": 1,
+    "classScheduleId": 1,
+    "teacherId": 1,
+    "minAge": 5,
+    "maxAge": 10,
+    "duration": 30,
+    "minCount": 5,
+    "maxCount": 20,
+    "description": "Wild Animals",
+    "prerequisites": "Min Age 5",
+    "eminities": "White paper & pencil",
+    "teacherExperience": "5 years in teaching 10 year old's"
+  },
+  "2": {
+    "id": 2,
+    "name": "Pets",
+    "classGroupId": 1,
+    "classTypeId": 1,
+    "classScheduleId": 1,
+    "teacherId": 1,
+    "minAge": 5,
+    "maxAge": 10,
+    "duration": 30,
+    "minCount": 5,
+    "maxCount": 20,
+    "description": "Pets",
+    "prerequisites": "Min Age 5",
+    "eminities": "White paper & pencil",
+    "teacherExperience": "5 years in teaching 10 year old's"
+  }
+}

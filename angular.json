@@ -53,32 +53,6 @@
       },
       "tags": []
     },
-    "api-services": {
-      "projectType": "library",
-      "root": "libs/api/services",
-      "sourceRoot": "libs/api/services/src",
-      "prefix": "stack",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/api/services"],
-          "options": {
-            "jestConfig": "libs/api/services/jest.config.ts",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/api/services/**/*.ts",
-              "libs/api/services/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": []
-    },
     "assets": {
       "projectType": "library",
       "root": "libs/assets",
