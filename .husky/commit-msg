@@ -2,8 +2,8 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo 'commit linting...'
-# echo -en "How r you [ 'Shawn' ] "
-read name
+echo -en "How r you [ 'Shawn' ] "
+exec < /dev/tty read name
 if [ -z "$name" ]; then
 name=`whoami`
 fi
