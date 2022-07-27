@@ -2,18 +2,16 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo 'commit linting...'
-echo -en "How r you [ 'Shawn' ] "
-exec < /dev/tty read name
-if [ -z "$name" ]; then
-name=`whoami`
-fi
-echo "Name is : $name"
 
-npx --no -- commitlint --edit $1
+# npx --no -- commitlint --edit $1
 
-if [ $? -ne 0 ];
+if  npx --no -- commitlint --edit $1
 then
 	echo 'inside'
- 	$(exec < /dev/tty && node_modules/.bin/cz --hook) || true
- fi;
+ 	# $(exec < /dev/tty && node_modules/.bin/cz --hook) || true
+else 
+	echo 'error'
+	$(exec < /dev/tty && node_modules/.bin/cz --hook) || true
+ fi
+
 echo $success
