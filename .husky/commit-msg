@@ -1,5 +1,17 @@
-#!/bin/sh
+#!/bin/bash
 . "$(dirname "$0")/_/husky.sh"
 
 echo 'commit linting...'
-npx --no -- commitlint --edit $1
+
+# npx --no -- commitlint --edit $1
+
+if  npx --no -- commitlint --edit $1
+then
+	echo 'inside'
+ 	# $(exec < /dev/tty && node_modules/.bin/cz --hook) || true
+else 
+	echo 'error'
+	$(exec < /dev/tty && node_modules/.bin/cz --hook) || true
+ fi
+
+echo $success

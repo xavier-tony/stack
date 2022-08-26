@@ -25,14 +25,14 @@
       "@stack/auth/login": ["libs/auth/src/lib/login/index.ts"],
       "@stack/auth/logout": ["libs/auth/src/lib/logout/index.ts"],
       "@stack/auth/signup": ["libs/auth/src/lib/signup/index.ts"],
+      "@stack/dashboard": ["libs/shared/components/src/lib/dashboard/index.ts"],
       "@stack/database": ["libs/database/src/index.ts"],
       "@stack/mock-server": ["libs/mock-server/src/index.ts"],
       "@stack/models": ["libs/models/src/index.ts"],
       "@stack/out-school": ["apps/out-school/src/index.ts"],
       "@stack/services": ["libs/services/src/index.ts"],
       "@stack/shared/components": ["libs/shared/components/src/index.ts"],
-      "@stack/shared/ui-kit": ["libs/shared/ui-kit/src/index.ts"],
-      "@stack/dashboard": ["libs/shared/components/src/lib/dashboard/index.ts"]
+      "@stack/shared/ui-kit": ["libs/shared/ui-kit/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
