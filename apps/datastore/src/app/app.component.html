@@ -4,7 +4,7 @@
     (search)="filter($event)"
   ></stack-search>
 
-  <ng-container *ngFor="let table of tables | filtertables: searchString">
+  <ng-container *ngFor="let table of tables | filtertables : searchString">
     <stack-table
       [data]="table.data$ | async"
       [tableName]="table.name"
