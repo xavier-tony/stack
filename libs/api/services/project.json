@@ -1,0 +1,27 @@
+{
+  "name": "api-services",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/api/services/src",
+  "prefix": "stack",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/api/services"],
+      "options": {
+        "jestConfig": "libs/api/services/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/api/services/**/*.ts",
+          "libs/api/services/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

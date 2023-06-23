@@ -1,0 +1,27 @@
+{
+  "name": "mock-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/mock-server/src",
+  "prefix": "stack",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/mock-server"],
+      "options": {
+        "jestConfig": "libs/mock-server/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/mock-server/src/**/*.ts",
+          "libs/mock-server/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

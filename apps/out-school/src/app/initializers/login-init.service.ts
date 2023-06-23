@@ -17,12 +17,12 @@ export class LoginInitService {
 
   refreshLogin(): () => Promise<void> {
     return () =>
-      new Promise<void>((resolve, reject) => {
+      new Promise<void>(resolve => {
         this.authFacade.dispatch(AuthActions.refreshLogin());
         combineLatest([this.authFacade.loaded$, this.authFacade.loggedIn$])
           .pipe(
-            filter(([loaded, loggedIn]) => loaded),
-            map(([loaded, loggedIn]) => loggedIn),
+            filter(([loaded]) => loaded),
+            map(([, loggedIn]) => loggedIn),
             tap(console.log),
             first()
           )
